@@ -1,0 +1,20 @@
+name: CI - Frontend
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v4
+    - name: Configurar Node 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Instalar dependencias
+      run: npm install --legacy-peer-deps
+    - name: Compilar
+      run: npm run build

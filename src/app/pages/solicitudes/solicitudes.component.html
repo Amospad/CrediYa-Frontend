@@ -1,0 +1,51 @@
+<div class="solicitudes-container">
+  <h2>Mis Solicitudes de Préstamo</h2>
+
+  <div class="form-card">
+    <h3>Nueva Solicitud</h3>
+    <div class="form-grid">
+      <input type="text" [(ngModel)]="documentoIdentidad" placeholder="Documento de Identidad">
+      <input type="number" [(ngModel)]="monto" placeholder="Monto">
+      <input type="number" [(ngModel)]="plazo" placeholder="Plazo (meses)">
+      <select [(ngModel)]="tipoPrestamo">
+        <option value="LIBRE_INVERSION">Libre Inversión</option>
+        <option value="HIPOTECARIO">Hipotecario</option>
+        <option value="VEHICULO">Vehículo</option>
+      </select>
+    </div>
+    <button (click)="crearSolicitud()" [disabled]="loading">Crear Solicitud</button>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <div *ngIf="success" class="success">{{ success }}</div>
+  </div>
+
+  <div class="table-card">
+    <h3>Listado de Solicitudes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Documento</th>
+          <th>Monto</th>
+          <th>Plazo</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of solicitudes">
+          <td>{{ s.id }}</td>
+          <td>{{ s.documentoIdentidad }}</td>
+          <td>{{ s.monto | currency }}</td>
+          <td>{{ s.plazo }}</td>
+          <td>{{ s.tipoPrestamo }}</td>
+          <td><span class="badge {{ s.estado }}">{{ s.estado }}</span></td>
+          <td>
+            <button class="aprobar" (click)="cambiarEstado(s.id, 'APROBADA')">Aprobar</button>
+            <button class="rechazar" (click)="cambiarEstado(s.id, 'RECHAZADA')">Rechazar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

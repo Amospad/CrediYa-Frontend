@@ -7,8 +7,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 
-// Módulos de ngx-admin que necesita el PagesComponent
 import { NbMenuModule } from '@nebular/theme';
 import { ThemeModule } from '../@theme/theme.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
@@ -19,6 +19,7 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    SolicitudesComponent,
   ],
   imports: [
     CommonModule,
