@@ -1,0 +1,21 @@
+# Node / Angular
+node_modules/
+dist/
+.angular/
+build-cache/
+npm-debug.log
+yarn-error.log
+
+# Entorno
+.env
+.env.local
+
+# VS Code / IntelliJ
+.vscode/
+.idea/
+*.iml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.log

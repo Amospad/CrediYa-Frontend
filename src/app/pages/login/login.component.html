@@ -1,0 +1,24 @@
+<div class="login-container">
+  <div class="login-box">
+    <h2>CrediYa</h2>
+    <p>Ingresa a tu cuenta</p>
+    
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Correo Electrónico</label>
+        <input type="email" [(ngModel)]="correoElectronico" name="correo" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input type="password" [(ngModel)]="password" name="password" required>
+      </div>
+
+      <div *ngIf="error" class="error-msg">{{ error }}</div>
+
+      <button type="submit" [disabled]="loading">
+        {{ loading ? 'Ingresando...' : 'Ingresar' }}
+      </button>
+    </form>
+  </div>
+</div>

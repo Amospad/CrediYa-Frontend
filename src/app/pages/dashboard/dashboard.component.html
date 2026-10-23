@@ -1,0 +1,24 @@
+<div class="dashboard-container">
+  <h1>Bienvenido a CrediYa</h1>
+  <p>Has iniciado sesión correctamente.</p>
+  
+  <div class="menu-cards">
+    <div class="card">
+      <h3>Solicitudes</h3>
+      <p>Gestiona tus solicitudes de préstamo.</p>
+      <button (click)="irASolicitudes()">Ver Solicitudes</button>
+    </div>
+    
+    <div class="card">
+      <h3>Reportes</h3>
+      <p>Consulta las métricas del negocio.</p>
+      <button (click)="irAReportes()">Ver Reportes</button>
+    </div>
+
+    <div class="card">
+      <h3>Cerrar Sesión</h3>
+      <p>Finaliza tu sesión actual.</p>
+      <button class="logout" (click)="logout()">Cerrar Sesión</button>
+    </div>
+  </div>
+</div>
